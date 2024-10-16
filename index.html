@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVERSATION</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .con {
+            width: 90%;
+            border: 4px solid black;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: white;
+        }
+        .info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .doc, .pas {
+            width: 45%;
+            border: 2px solid black;
+            padding: 10px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 10px 0;
+            padding: 5px;
+        }
+        button {
+            margin: 10px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <h2>Conversation between Doctor and Patient</h2>
+        <button onclick="a()">Start Conversation</button>
+        <div class="info">
+            <div class="doc">
+                <h2>DOCTOR</h2>
+                <p id="doctorText"></p>
+            </div>
+            <div class="pas">
+                <h2>PATIENT</h2>
+                <p id="patientText"></p>
+            </div>    
+        </div>
+    </div>
+    <script>
+        const doctorText = document.getElementById("doctorText");
+        const patientText = document.getElementById("patientText");
+
+        function a(){
+            console.log("doctor : next pacent come in");
+            doctorText.innerText="next pacent come in";
+            setTimeout(()=>{
+                    b();
+                },2000);
+        }
+    
+        function b(){
+            console.log("Patient – Good morning, doctor. Can I come in? ");
+            patientText.innerText="Good morning, doctor. Can I come in? ";
+            setTimeout(()=>{
+                    c();
+                },4000);
+        }
+    
+        function c(){
+            console.log("Doctor – Good morning. How are you feeling today? You seem a bit under the weather. ");
+            doctorText.innerText="Good morning. How are you feeling today? You seem a bit under the weather.";
+            setTimeout(()=>{
+                d();
+                },4000);
+        }
+        function d(){
+            console.log("Patient – Indeed, doctor. I’ve been feeling unwell for a few days. I have a headache, a runny nose, and a sore throat. ");
+            patientText.innerText="Indeed, doctor. I’ve been feeling unwell for a few days. I have a headache, a runny nose, and a sore throat. ";
+            setTimeout(()=>{
+                e();
+                },4000);
+        }
+        function e(){
+            console.log("Doctor – I see. Let's check your temperature and throat. Have you been in contact with anyone who is sick? ");
+            doctorText.innerText="I see. Let's check your temperature and throat. Have you been in contact with anyone who is sick? ";
+            setTimeout(()=>{
+                f();
+                },4000);
+        }
+        function f(){
+            console.log("Patient – Not that I’m aware of, doctor. ");
+            patientText.innerText="Not that I’m aware of, doctor.";
+            setTimeout(()=>{
+                g();
+                },4000);
+        }
+        function g(){
+            console.log("Doctor – Well, it seems like you have a flu. It's important that you rest, hydrate and take the prescribed medication. Also, avoid contact with others to prevent spreading the virus. ");
+            doctorText.innerText="Well, it seems like you have a flu. It's important that you rest, hydrate and take the prescribed medication. Also, avoid contact with others to prevent spreading the virus. ";
+            setTimeout(()=>{
+                h();
+                },4000);
+        }
+        function h(){
+            console.log("Patient – I will do as you say, doctor. Thank you for your advice. ");
+            patientText.innerText="I will do as you say, doctor. Thank you for your advice. ";
+            setTimeout(()=>{
+                i();
+                },4000);
+        }
+        function i(){
+            console.log("Doctor – You're welcome. Get well soon. ");
+            doctorText.innerText="You're welcome. Get well soon. ";
+        }
+    </script>
+</body>
+</html>
